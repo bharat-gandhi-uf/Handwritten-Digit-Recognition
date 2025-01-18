@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <img src="Final Project Submission/images/sss.jpeg" alt="Logo" width="250" height="250">
+  <img src="images/sss.jpeg" alt="Logo" width="250" height="250">
 </p>
 
 
