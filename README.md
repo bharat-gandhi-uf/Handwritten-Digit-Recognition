@@ -18,7 +18,6 @@
         <li><a href="#dependencies">Dependencies</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#authors">Authors</a></li>
@@ -31,7 +30,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project focuses on detecting handwritten (one or more) digit(s) created by... surprise surprise... 'hand', with love, from our own EEL5840/EEL4773 course students. To start with, we had 4190 images and the corrosponding labels.
+This project focuses on detecting handwritten (one or more) digit(s). To start with, we had 4190 images and the corrosponding labels. Image augmentation was done and every image was rotated by 90, 180, and 270 degrees to get 3 copies, and the total training set contained close to 14000 images and labels. The YOLOv8 model was fine tuned and trained on these images and labels, carrying out transfer learning.
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -49,27 +48,6 @@ Report - Project Report
 
 To use the 'torchmetrics' package for evaluating preformance metrices, we need to install 'torchmetrics'.  
 !pip install torchmetrics should do the job.
-
-<!-- USAGE EXAMPLES -->
-## Usage
-##### For Training
-The first action required is to download the yolov8.pt file in the current working directory so that it is accessible.  
-YOLO requires a specific directory structure in order to train the model on custom dataset. It needs a 'train' and a 'valid' folder and inside each of the folders, there should be 'images' and 'labels' folders containing the images and labels files with same name. It is important to note that the folder names must be kept as instructed, else the model will run into errors.  
-The folder structure is specified in the .yaml file, which also resides in the present working directory.  
-For example, my .yaml file cotans the following information:  
-  
-""  
-train: /blue/eel5840/b.gandhi/Final Project/datasets/train/images  
-val: /blue/eel5840/b.gandhi/Final Project/datasets/valid/images
-
-nc: 10  
-names: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  
-""  
-After the training, a folder named 'runs' will be created which will contain the results and predictions of any subsequent runs.  
-  
-#### For Testing
-For testing, the provided 'best.pt' file can be used to load the model weights, as instructed in the 'test.ipynb' notebook. It is also important to load the test images and labels in the respective variables created for them in the notebook. After this step, the subsequent cells can be ran and the model will predict the labels and coordinates for the test images and save them in the 'runs/' folder. The IoU and mAP scores can be generated using the provided functions in the 'test.ipynb' notebook.
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -96,9 +74,6 @@ Bharat Gandhi - b.gandhi@ufl.edu
 Yongkyoon Park - yo.park@ufl.edu  
 Nicholas Vasconcellos - nicholas.silyvas@ufl.edu
 
-Project Link: https://github.com/UF-EEL5840-EEE4773-Fall-2024/final-project-code-report-samba-spice-and-seoul.git
-
-
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
@@ -106,7 +81,5 @@ Project Link: https://github.com/UF-EEL5840-EEE4773-Fall-2024/final-project-code
 * [Dhruv Kushwaha] - Our Cool Supervised Teacher
 * [Spencer Chang] - Our Wizard of FML
 * [Joseph Conroy] - Our Fire Fighter  
-
-and the complete FML Fall'24 Team at UF
 
 ## Thank you
